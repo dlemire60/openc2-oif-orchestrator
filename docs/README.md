@@ -23,6 +23,14 @@ developers to begin working with the OIF Orchestrator. A
 more detailed start-up explanation can be found in
 [WALKTHROUGH.md](./WALKTHROUGH.md)
 
+OIF implements both side of the OpenC2 [Producer / Consumer
+model](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#16-overview).
+The Orchestrator performs the OpenC2 Producer role, while
+the Device performs the Consumer role. The following diagram
+provides a high-level overview:
+
+![Insert Overview Diagram](images/)
+
 ## Container/Services ReadMe
 
 The ReadMe files for OIF Orchestrator components are linked

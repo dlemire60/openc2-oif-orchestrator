@@ -195,6 +195,11 @@ developer input here`**]). The GUIs are accessed as follows:
  - User GUI -- `http://localhost:8080`
  - Admin GUI -- `http://localhost:8081`
 
+Browsing to the User GUI location brings up the login
+screen:
+
+![OIF Orchestrator User Login](images/oif-orch-login.png)
+
 > **NOTE:** Need to polish text based on the following Q&A: 
 
 > **QUESTION:** what's the different between "Admin" and
@@ -216,9 +221,10 @@ For both GUIs, the login credentials are
 
 > **NOTE:** Probably want a screenshot for the following
 
-After login to the User GUI you should see a screen with a
-menu of <br>
-`Home  Devices  Actuators  Commands  Command Generator`
+After login to the User GUI you will seen the home screen
+with the system menu
+
+![OIF Orchestrator Home Screen](images/oif-orch-home-screen.png)
 
 ## Create Devices and  Actuators
 
