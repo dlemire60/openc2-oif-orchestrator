@@ -1,4 +1,4 @@
-# O.I.F. (OpenC2 Integration Fabric)
+# O.I.F. (OpenC2 Integration Framework)
 
 ## Overview
 

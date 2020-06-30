@@ -1,4 +1,4 @@
-# O.I.F. (OpenC2 Integration Fabric) Orchestrator Walk Through
+# O.I.F. (OpenC2 Integration Framework) Orchestrator Walk Through
 
 This document provides a detailed walkthrough of the
 installation, configuration, and basic operations of the OIF Orchestrator.
@@ -7,7 +7,10 @@ installation, configuration, and basic operations of the OIF Orchestrator.
 
 Developers need the following tools to start working with
 OIF:
- - Required:  [Python](https://www.python.org/), [Docker](https://www.docker.com/)
+ - Required:  [Python](https://www.python.org/),
+   [pip](https://pip.pypa.io/en/stable/),
+   [Docker](https://www.docker.com/), [Docker
+Compose](https://docs.docker.com/compose/)
  - Optional: [git](https://git-scm.com/)
 
 The OIF Orchestrator requires
@@ -19,10 +22,10 @@ system:
 - Docker, version 18 or higher
 - Python, version 3.6 or higher
 
-OIF Orchestrator also required [Docker
+OIF Orchestrator also requires [Docker
 Compose](https://docs.docker.com/compose/), and
-[pip](https://pip.pypa.io/en/stable/).  Docker Compose is
-[installed with
+[pip](https://pip.pypa.io/en/stable/) for configuration and
+setup.  Docker Compose is [installed with
 Docker](https://docs.docker.com/compose/install/) on Windows
 and Mac systems, but must be installed separately on Linux
 systems. Pip is usually [installed with
@@ -71,7 +74,11 @@ python configure.py [OPTIONS]
 ```
 
 > **QUESTION**: is there a recommend default for the
-> configuration command?
+> configuration command? 
+
+> **QUESTION**: Is it common to need to run
+> `configure.py` more than once (seems to have happened in
+> our testing)?
 
 ## Container/Services ReadMe
 
@@ -282,3 +289,4 @@ Device registration notes:
   the `MQTT_TOPICS` environment variable. Read the MQTT
   Topics section [here](transport/mqtt/ReadMe.md)
 
+## Generating Commands and Viewing Responses
