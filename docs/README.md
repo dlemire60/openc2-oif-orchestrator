@@ -29,7 +29,7 @@ The Orchestrator performs the OpenC2 Producer role, while
 the Device performs the Consumer role. The following diagram
 provides a high-level overview:
 
-![Insert Overview Diagram](images/)
+![Insert Overview Diagram](images/overview.png)
 
 ## Container/Services ReadMe
 
