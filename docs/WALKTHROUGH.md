@@ -277,7 +277,7 @@ The procedure to create a new device is:
 1. Click the `REGISTER` button at bottom right to complete
    the device registration.
 
-The screenshots shows the registered devices list and device
+The screenshots below show the registered devices list and device
 editing dialog:
 
 ![Orchestrator Registered Devices List](images/oif-orch-dev-reg-screen.png)
