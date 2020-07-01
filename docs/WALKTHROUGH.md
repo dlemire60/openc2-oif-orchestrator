@@ -1,7 +1,12 @@
 # O.I.F. (OpenC2 Integration Framework) Orchestrator Walk Through
 
 This document provides a detailed walkthrough of the
-installation, configuration, and basic operations of the OIF Orchestrator.
+installation, configuration, and basic operations of the OIF
+Orchestrator. The Orchestrator implements the OpenC2 [Producer](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#16-overview).
+The following diagram provides a high-level overview of the
+OIF Orchestrator's construction:
+
+![OIF Orchestrator Block Diagram](images/orch-block-diagram.png)
 
 ## System Preparation
 
@@ -271,6 +276,15 @@ The procedure to create a new device is:
    of the device's type.
 1. Click the `REGISTER` button at bottom right to complete
    the device registration.
+
+The screenshots shows the registered devices list and device
+editing dialog:
+
+![Orchestrator Registered Devices List](images/oif-orch-dev-reg-screen.png)
+
+
+![Orchestrator Device Editing Dialog](images/oif-orch-edit-device.png)
+
 
 Device registration notes:
 
