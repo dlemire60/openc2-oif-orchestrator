@@ -2,9 +2,10 @@
 
 This document provides a detailed walkthrough of the
 installation, configuration, and basic operations of the OIF
-Orchestrator. The Orchestrator implements the OpenC2 [Producer](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#16-overview).
-The following diagram provides a high-level overview of the
-OIF Orchestrator's construction:
+Orchestrator. The Orchestrator implements the OpenC2
+[Producer](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#16-overview)
+function. The following diagram provides a high-level
+overview of the OIF Orchestrator's construction:
 
 ![OIF Orchestrator Block Diagram](images/orch-block-diagram.png)
 
@@ -38,8 +39,13 @@ Python](https://pip.pypa.io/en/stable/installing/).
 Developers are advised to update all of the software
 components to the latest versions.
 
-> **NOTE:** Need to include something about the Docker "post
-> installation steps for Linux"
+If working in a Linux environment, developers should also
+perform Docker's [post-installation steps for
+Linux](https://docs.docker.com/engine/install/linux-postinstall/),
+specifically:
+
+ * Manage Docker as a non-root user, and
+ * Configure Docker to start on boot
 
 Developers may optionally install [git](https://git-scm.com/)
 version control software, as a means of obtaining the OIF
