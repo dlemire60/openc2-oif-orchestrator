@@ -2,14 +2,14 @@
 
 ## Overview
 
-OpenC2 Integration Framework (OIF) is a project that will
+OpenC2 Integration Framework (OIF) is a project to
 enable developers to create and test OpenC2 specifications
 and implementations without having to recreate an entire
 OpenC2 ecosystem.  The OIF consists of two major parts. The
 ["OIF Orchestrator" (this
-repository)](https://github.com/oasis-open/openc2-oif-orchestrator)
-which functions as an OpenC2 producer and the "[OIF
-Device](https://github.com/oasis-open/openc2-oif-device)"
+repository)](https://github.com/oasis-open/openc2-oif-orchestrator),
+which functions as an OpenC2 producer, and the "[OIF
+Device](https://github.com/oasis-open/openc2-oif-device)",
 which functions as an OpenC2 consumer. Due to port bindings
 it is recommended that the Orchestrator and the Device not
 be run on the same machine.
@@ -21,9 +21,10 @@ be run on the same machine.
 This document contains the information necessary for experienced
 developers to begin working with the OIF Orchestrator. A
 more detailed start-up explanation can be found in
-[WALKTHROUGH.md](./WALKTHROUGH.md)
+[WALKTHROUGH.md](./WALKTHROUGH.md).
 
-OIF implements both side of the OpenC2 [Producer / Consumer
+When used together the OIF Orchestrator and Device implement
+both sides of the OpenC2 [Producer / Consumer
 model](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#16-overview).
 The Orchestrator performs the OpenC2 Producer role, while
 the Device performs the Consumer role. The following diagram
