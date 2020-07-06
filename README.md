@@ -18,7 +18,31 @@ OIF consists of two major parts. The "orchestrator" which functions as an OpenC2
 
 This particular repository contains the code required to set up an OpenC2 Orchestrator. The Device repository can be found [here](https://github.com/oasis-open/openc2-oif-device). Due to port bindings it is recommended that the orchestrator and the device not be run on the same machine.
 
-The OIF Orchestrator was created with the intent of being an easy-to-configure OpenC2 producer that can be used in the creation of reference implemetations to control multiple devices. To that end it allows for the addition of multiple serializations and trasnportation types.
+_Motivation_:  The OIF Orchestrator was created with the intent of being an
+easy-to-configure OpenC2 producer that can be used in the
+creation of reference implementations to control multiple
+devices. To that end it allows for the addition of multiple
+serializations and message transfer solutions. The intent is
+to reduce the time and effort needed to produce an OpenC2
+reference implementation. The OpenC2 specification does not
+limit the types of data serialization or transport protocols
+that can be utilized to deliver the message content. OIF was
+built with the capability to easily add serialization and
+transport functionality in order to be able to represent a
+wide range of use cases. Additionally, OIF allows newcomers
+a lower barrier to entry by providing a framework to work
+within, allowing a developer to focus their product's
+functionality without having to build out the rest of the
+supporting architecture.
+
+Short term, OIF is being used to work through
+interoperability use cases in order to mature the OpenC2
+specification. Long term, OIF plans to help guide the
+community towards conformance by providing a validation/test
+capability that will determine if the vendor implementation
+meets the requirements set forth in OpenC2 specifications.
+
+
 
 To get started please reference [https://github.com/oasis-open/openc2-oif-orchestrator/blob/master/docs/Orchestrator.md](https://github.com/oasis-open/openc2-oif-orchestrator/blob/master/docs/Orchestrator.md)
 
