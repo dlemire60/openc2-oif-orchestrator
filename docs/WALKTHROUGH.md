@@ -123,7 +123,8 @@ This command will:
  - Execute the application in the defined containers,
    attached to the terminal from which it was launched  
 
-OIF execution can be terminated `ctrl-C`.
+Execution of an attached OIF instance is terminated by
+typing `ctrl-C` in the terminal.
 
 The Orchestrator can also be started in detached mode using
 the docker-compose `-d` or `--detach` option:
