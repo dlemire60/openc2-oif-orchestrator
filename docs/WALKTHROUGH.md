@@ -231,8 +231,6 @@ For both GUIs, the login credentials are
  - Username: `admin`
  - Password: `password`
 
-> **NOTE:** Probably want a screenshot for the following
-
 After login to the User GUI you will seen the home screen
 with the system menu
 
