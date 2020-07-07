@@ -352,6 +352,62 @@ editing dialog:
 
 ## Generating Commands and Viewing Responses
 
+Prerequisites for processing commands and responses:
+* A device has been registered
+* An actuator has been registered and associated with a
+  device
+* The OIF Orchestrator and Device are running, with a network
+  connection between them
+
+The OIF Orchestrator has main menu functions to generate
+commands (`Command Generator`), and to view the history of
+commands and associated responses (`Commands`).
+
+### Creating and Sending Commands
+
+The steps to generate and send commands are as follows:
+
+* Select `Command Generator` from the main menu.
+* From the pull-down labeled `Schema`, select the schema for
+  the desired actuator or actuator profile; the schema will
+  be loaded in the pane below for reference.
+* Select the `Creator` tab on the right side, then click on
+  `Message Type` and pick `OpenC2_Command`; a set of
+  selection boxes will appear below, based on the selected
+  schema. These boxes update dynamically when appropriate as
+  the command is constructed.
+* Use the selection boxes to specify the desired command;
+  for example:
+  - action:  `query`
+  - target:  `features`
+  - feature:  `pairs`
+* Click the `Generate ID` button to assign a unique
+  identifier to this command
+* Select the `Message` tab to see the message content and
+  choose the Protocol and Serialization for sending this
+  command.  Options will be limited to those supported by
+  the device with which the actuator is associated.
+* Click the `Send` button to issue the command to the
+  actuator.
+* A pop-up notification will appear reporting the command is
+  sent, or any errors that occur.
+
+
+![Command Generator Screenshot](images/oif-orch-command-sent.png)
+
+### Viewing Command / Response History
+
+To view commands and their associated responses, select
+`Commands` from the main menu. A list will appear of all
+commands that have been sent.
+
+![Command History List](images/oif-orch-command-history.png)
+
+Click on the `Info` button for any command to see the
+command / response history (the image below was edited to show
+complete command and response together).
+
+![Command / Response Details Example](images/oif-orch-cmd-rsps.png)
 
 ## Message Transfer via MQTT Publish / Subscribe
 
