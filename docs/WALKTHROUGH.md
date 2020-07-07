@@ -301,14 +301,37 @@ Device registration notes:
 
 
 ### Registering an Actuator with the OIF
-- Give actuator a name and generate a UUID for it.
-- Select a parent device.
-    -  Note: device should be registered before the
-       actuator.
-> **NOTE:**  link below is broken; need useful link
-- Upload/Copy-Paste schema. Schema for the default included ISR actuator can be found at [device/actuator/isr/act_server/schema.json](../device/actuator/isr/act_server/schema.json).
-> **NOTE:**  "ISR actuator" link below is broken; need useful link
-- This information can also be found under the [ISR Actuator](../device/actuator/isr/ReadMe.md) page.
+
+The process for registering an actuator is similar to that
+for a device. Every actuator is associated with a device, so
+devices **must** be registered before their actuators. A
+device can have multiple actuators; each actuator is
+associated with a single device. The process for registering
+an actuator is:
+
+
+1. Select `Actuators` from the Orchestrator menu; this brings
+  the list of registered actuators.
+1. Click the `REGISTER` button at the right; this opens the
+   dialog to register a new actuator.
+1. Give the actuator a name (user's discretion).
+1. Click the `GEN ID` button to generate an Actuator ID (Note: while
+   the field permits user entry of an arbitrary ID, the
+   Orchestrator expects a UUID value here).
+1. Select the actuator's parent device from the menu of
+   registered devices
+1. Provide a JSON schema for the functions supported by the
+   device. A schema can be pasted into the window, or the
+   `Upload Schema` button at the bottom right opens a
+   selection dialog to choose the appropriate schema file.
+1. Click the `REGISTER` button at bottom right to complete
+   the device registration.
+
+Example schemas can be found under `/docs/schemas` in
+oif-orchestrator repository.
+
+
+
 - If you are registering a new actuator for the first time
   while utilizing the MQTT transport you may need to update
   the `MQTT_TOPICS` environment variable. Read the MQTT
