@@ -34,24 +34,25 @@ system:
 - Docker, version 18 or higher
 - Python, version 3.6 or higher
 
-OIF Orchestrator also requires [Docker
+OIF Orchestrator also requires
+[pip](https://pip.pypa.io/en/stable/) and [Docker
 Compose](https://docs.docker.com/compose/), and
-[pip](https://pip.pypa.io/en/stable/) for configuration and
-setup.  Docker Compose is [installed with
+for configuration and
+setup.  Pip is usually [installed with
+Python](https://pip.pypa.io/en/stable/installing/). Docker Compose is [installed with
 Docker](https://docs.docker.com/compose/install/) on Windows
 and Mac systems, but must be installed separately on Linux
-systems. Pip is usually [installed with
-Python](https://pip.pypa.io/en/stable/installing/).
-Developers are advised to update all of the software
-components to the latest versions.
-
-If working in a Linux environment, developers should also
+systems.  If working in a Linux environment, developers should also
 perform Docker's [post-installation steps for
 Linux](https://docs.docker.com/engine/install/linux-postinstall/),
 specifically:
 
  * Manage Docker as a non-root user, and
  * Configure Docker to start on boot
+
+Developers are advised to update all of the software
+components to the latest versions.
+
 
 Developers may optionally install [git](https://git-scm.com/)
 version control software, as a means of obtaining the OIF
