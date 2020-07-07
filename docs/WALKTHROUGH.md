@@ -241,7 +241,7 @@ commands and responses.
 
 The procedure to create a new device is:
 
-1. Select `Devices` from the Orchestrator menu; this brings
+1. Select `Devices` from the Orchestrator menu; this brings up
   the list of registered devices.
 1. Click the `REGISTER` button at the right; this opens the
    dialog to register a new device.
@@ -253,7 +253,7 @@ The procedure to create a new device is:
    - Default port for HTTPS Transfer is 5001
    - Default port for MQTT Transfer is 1883
 1. Select the transfer protocol to use with this device.
-1. Select the message serialization to use with this device.
+1. Select the message serialization(s) to use with this device.
    JSON is the default serialization for OpenC2.
 1. Enter any desired information in the `Note` field. This
    is typically used to provide a human-friendly description
@@ -279,6 +279,8 @@ Device registration notes:
   registration dialog for updating
 - The blue `+`  button in the registration dialog permits
   defining additional transport interfaces for a device.
+- The red `x`  button in the registration dialog deletes the
+  associated transport interfaces from the device.
 
 
 
