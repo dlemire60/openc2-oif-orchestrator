@@ -77,7 +77,7 @@ software. There are two approaches for this:
 ## Configure OIF Orchestrator Software
 
 To configure the OIF Orchestrator, navigate to the directory
-containing the local software copy and Run `configure.py`
+containing the local software copy and run `configure.py`
 with the desired options prior to starting the Orchestrator
 for the first time. The available options are:
  - `-b` or `--build-image` -- Build base containers
@@ -86,27 +86,14 @@ for the first time. The available options are:
  - `-h` or `--help` -- Shows the help and exits
  - `-v` or `--verbose` -- Enables verbose output    	
 
-The configuration command is
+The basic configuration command is
 ```bash 
-python configure.py [OPTIONS]
+python3 configure.py
 ```
-
-> **QUESTION**: is there a recommend default for the
-> configuration command? 
 
 > **QUESTION**: Is it common to need to run
 > `configure.py` more than once (seems to have happened in
 > our testing)?
-
-## Container/Services ReadMe
-
-The ReadMe files for OIF Orchestrator components are linked
-here:
-
-|Orchestrator   | Transport  | Logger  |
-|:-:|:-:|:-:|
-| [Core](../orchestrator/core/ReadMe.md)  | [HTTPS](../orchestrator/transport/https/README.md)  | [GUI](../logger/gui/ReadMe.md)  |
-| [GUI](../orchestrator/gui/client/ReadMe.md)  | [MQTT](../orchestrator/transport/mqtt/ReadMe.md)  | [Server](../logger/server/ReadMe.md)  |
 
 
 
@@ -419,3 +406,15 @@ complete command and response together).
   while utilizing the MQTT transport you may need to update
   the `MQTT_TOPICS` environment variable. Read the MQTT
   Topics section [here](transport/mqtt/ReadMe.md)
+
+
+## Container/Services ReadMe
+
+If needed, the ReadMe files for the OIF Orchestrator's
+components are linked here:
+
+|Orchestrator   | Transport  | Logger  |
+|:-:|:-:|:-:|
+| [Core](../orchestrator/core/ReadMe.md)  | [HTTPS](../orchestrator/transport/https/README.md)  | [GUI](../logger/gui/ReadMe.md)  |
+| [GUI](../orchestrator/gui/client/ReadMe.md)  | [MQTT](../orchestrator/transport/mqtt/ReadMe.md)  | [Server](../logger/server/ReadMe.md)  |
+
