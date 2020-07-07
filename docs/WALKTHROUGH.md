@@ -193,35 +193,16 @@ A detached instance of OIF is terminated with the complementary command:
 
 ## Accessing the Orchestrator GUI
 
-The OIF Orchestrator provides graphical user interfaces
-(GUIs) for both the user (i.e., for managing devices and
-actuators, and creating and sending OpenC2 commands and
-receiving responses) and for administration (i.e., ... [**`need
-developer input here`**]). The GUIs are accessed as follows:
- - User GUI -- `http://localhost:8080`
- - Admin GUI -- `http://localhost:8081`
-
-Browsing to the User GUI location brings up the login
+The OIF Orchestrator provides a graphical user interfaces
+(GUI) for the user to manage devices and
+actuators, and create and send OpenC2 commands and
+review responses The GUI is accessed at
+`http://localhost:8080`.  Browsing to the User GUI location brings up the login
 screen:
 
 ![OIF Orchestrator User Login](images/oif-orch-login.png)
 
-> **NOTE:** Need to polish text based on the following Q&A: 
-
-> **QUESTION:** what's the different between "Admin" and
-> "logger", if any?
-
-- "Admin" is the Django built-in admin (more granular control of database tables) and preferences (Orch ID, Orch Name, Orch IP, CommandWait)
- - "Logger" is the central logger for the containers (if
-   enabled)
-
-> **QUESTION:** what should this walkthrough say about the
-> Admin / Logger UI?
-
-- Admin - Granular control of existing database tables if errors/need arises for use, global preference updating
-- Logger - Central location for logs if enabled
-
-For both GUIs, the login credentials are 
+The default login credentials are 
  - Username: `admin`
  - Password: `password`
 
@@ -229,6 +210,10 @@ After login to the User GUI you will seen the home screen
 with the system menu
 
 ![OIF Orchestrator Home Screen](images/oif-orch-home-screen.png)
+
+> **NOTE:** add information about changing default login
+> credentials and GUI theme.
+
 
 ## Create Devices and  Actuators
 
