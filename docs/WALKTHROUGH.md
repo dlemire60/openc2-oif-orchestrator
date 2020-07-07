@@ -9,6 +9,12 @@ overview of the OIF Orchestrator's construction:
 
 ![OIF Orchestrator Block Diagram](images/orch-block-diagram.png)
 
+This walkthrough focuses on the use of the HTTP / HTTPS
+transfer protocol for message exchange between the
+Orchestrator and the Device. Some additional notes are
+provided at the end for utilizing the MQTT publish /
+subscribe protocol in place of HTTP(S).
+
 ## System Preparation
 
 Developers need the following tools to start working with
@@ -327,14 +333,20 @@ an actuator is:
 1. Click the `REGISTER` button at bottom right to complete
    the device registration.
 
-Example schemas can be found under `/docs/schemas` in
-oif-orchestrator repository.
+Example schemas can be found under `/docs/schemas` in the
+openc2-oif-orchestrator repository.
 
+
+
+## Generating Commands and Viewing Responses
+
+
+## Message Transfer via MQTT Publish / Subscribe
+
+**TBSL**
 
 
 - If you are registering a new actuator for the first time
   while utilizing the MQTT transport you may need to update
   the `MQTT_TOPICS` environment variable. Read the MQTT
   Topics section [here](transport/mqtt/ReadMe.md)
-
-## Generating Commands and Viewing Responses
