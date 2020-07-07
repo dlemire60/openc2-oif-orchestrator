@@ -291,8 +291,11 @@ The procedure to create a new device is:
 The screenshots below show the registered devices list and device
 editing dialog:
 
+> **NOTE:** really need some better way of setting off / captioning the screenshots
+
 ![Orchestrator Registered Devices List](images/oif-orch-dev-reg-screen.png)
 
+<hr>
 
 ![Orchestrator Device Editing Dialog](images/oif-orch-edit-device.png)
 
@@ -335,6 +338,15 @@ an actuator is:
 
 Example schemas can be found under `/docs/schemas` in the
 openc2-oif-orchestrator repository.
+
+The screenshots below show the registered actuators list and actuator
+editing dialog:
+
+![Orchestrator Registered Actuators List](images/oif-orch-actuator-list.png)
+
+<hr>
+
+![Orchestrator Actuator Editing Dialog](images/oif-orch-actuator-registration-populated.png)
 
 
 
