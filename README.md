@@ -12,7 +12,7 @@ As documented in [Public Participation Invited](https://github.com/oasis-open/op
 
 ## Statement of Purpose
 
-**OpenC2 Integration Framework (OIF)** is a project to
+**OpenC2 Integration Framework (OIF)** is a project to enable
 developers to create and test OpenC2 specifications and
 implementations without having to recreate an entire OpenC2
 ecosystem.  The OIF consists of two major parts:
