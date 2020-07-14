@@ -60,7 +60,7 @@ meets the requirements set forth in OpenC2 specifications.
 
 
 
-To get started please reference [https://github.com/oasis-open/openc2-oif-orchestrator/blob/master/docs/README.md](https://github.com/oasis-open/openc2-oif-orchestrator/blob/master/docs/README.md)
+To get started please reference [README.md in the /docs folder](./docs/README.md)
 
 
 
