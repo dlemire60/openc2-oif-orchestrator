@@ -332,15 +332,12 @@ complete command and response together).
 
 ![Command / Response Details Example](images/oif-orch-cmd-rsps.png)
 
-## Message Transfer via MQTT Publish / Subscribe
-
-**TBSL**
-
+## (TBSL) Message Transfer via MQTT Publish / Subscribe
 
 - If you are registering a new actuator for the first time
   while utilizing the MQTT transport you may need to update
   the `MQTT_TOPICS` environment variable. Read the MQTT
-  Topics section [here](transport/mqtt/ReadMe.md)
+  Topics section [here](/orchestrator/transport/mqtt/ReadMe.md)
 
 
 ## Container/Services ReadMe
