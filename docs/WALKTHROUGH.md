@@ -144,12 +144,17 @@ The default login credentials are
  - Password: `password`
 
 After login to the User GUI you will seen the home screen
-with the system menu
+with the system menu. A `theme` menu is available in the
+bottom right corner to alter the GUI color scheme.
+The `Hello, {USER}` menu at the right provides access to logoff,
+password change, and system administration features.
+Information about the system administration features is
+provided in the [Orchestrator README file](./README.md).
+
+> **NOTE:** The password change feature is currently
+> non-functional and will be fixed in a future update.
 
 ![OIF Orchestrator Home Screen](images/oif-orch-home-screen.png)
-
-> **NOTE:** add information about changing default login
-> credentials and GUI theme.
 
 
 ## Create Devices and  Actuators
@@ -160,12 +165,18 @@ the Orchestrator can issue commands and receive responses.
 Note that the Device isn't explicitly mentioned in the
 [OpenC2
 specifications](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=openc2#technical),
-it's an OIF construct. Devices and their associated
-actuators have to be registered in the OIF Orchestrator before
-interactions with them are possible. In addition, actuators
-must have an associated JSON schema to inform the
-Orchestrator of the action/target pairs the actuator can
-process.
+it's an OIF construct. The following diagram illustrates the
+organization of an OIF Device:
+
+![OIF Device Block Diagram](./images/dev-block-diagram.png)
+
+
+
+Devices and their associated actuators have to be registered
+in the OIF Orchestrator before interactions with them are
+possible. In addition, actuators must have an associated
+JSON schema to inform the Orchestrator of the action/target
+pairs the actuator can process.
 
 Devices and actuators have associated identifiers. Within
 OIF these are required to be v4 UUIDs; this is an OIF
