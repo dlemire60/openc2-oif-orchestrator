@@ -242,7 +242,8 @@ associated with a single device. The process for registering
 an actuator is:
 
 
-1. Select `Actuators` from the Orchestrator menu; this brings
+1. Select `Actuators` from the Orchestrator menu; this
+   brings up
   the list of registered actuators.
 1. Click the `REGISTER` button at the right; this opens the
    dialog to register a new actuator.
