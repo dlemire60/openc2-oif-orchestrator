@@ -28,15 +28,15 @@ Compose](https://docs.docker.com/compose/)
 The OIF Orchestrator requires
 [Python](https://www.python.org/) and
 [Docker](https://www.docker.com/) to operate. Developers
-should insure both of the following are installed on their
+should ensure both of the following are installed on their
 system:
 
 - Docker, version 18 or higher
 - Python, version 3.6 or higher
 
 OIF Orchestrator also requires
-[pip](https://pip.pypa.io/en/stable/) and [Docker
-Compose](https://docs.docker.com/compose/), and
+[pip](https://pip.pypa.io/en/stable/) (version 18 or higher) and [Docker
+Compose](https://docs.docker.com/compose/) (version 1.2 or higher)
 for configuration and
 setup.  Pip is usually [installed with
 Python](https://pip.pypa.io/en/stable/installing/). Docker Compose is [installed with
@@ -70,7 +70,7 @@ software. There are two approaches for this:
  1. Download an ZIP archive by 
     1. Navigating to the
        [repository](https://github.com/oasis-open/openc2-oif-orchestrator).
-	1. Click on the green **Clone** button.
+	1. Click on the green **Code** button.
 	1. Select **Download ZIP**.
 	1. Unwrap the ZIP archive in the desired location.
 
@@ -79,9 +79,7 @@ software. There are two approaches for this:
 To configure the OIF Orchestrator, navigate to the directory
 containing the local software copy and run `configure.py`
 with the desired options prior to starting the Orchestrator
-for the first time. The available options are:
- - `-b` or `--build-image` -- Build base containers
- - `-d` or `--dev` -- Build using the development python image
+for the first time. The relevant options are:
  - `-f FILE` or `--log_file FILE` -- Enables logging to the designated file
  - `-h` or `--help` -- Shows the help and exits
  - `-v` or `--verbose` -- Enables verbose output    	
@@ -91,19 +89,12 @@ The basic configuration command is
 python3 configure.py
 ```
 
-> **QUESTION**: Is it common to need to run
-> `configure.py` more than once (seems to have happened in
-> our testing)?
-
-
-
-
 
 ## Running OIF Orchestrator (Docker Compose)
 
 As described in [its
 documentation](https://docs.docker.com/compose/), Docker
-Compose is use to "define and run multi-container Docker
+Compose is used to "define and run multi-container Docker
 applications". To start OIF Orchestrator in its default
 configuration, the only required command is:
 
@@ -118,7 +109,7 @@ This command will:
    attached to the terminal from which it was launched  
 
 Execution of an attached OIF instance is terminated by
-typing `ctrl-C` in the terminal.
+typing `ctrl-c` in the terminal.
 
 The Orchestrator can also be started in detached mode using
 the docker-compose `-d` or `--detach` option:
@@ -132,68 +123,14 @@ A detached instance of OIF is terminated with the complementary command:
 ```bash
 	docker-compose down
 ```
-> **--------------------------------------------------------------------**
 
-> **Note from Dave:** IMO for this walkthrough, which by
-> definition supposed to be basic, we should remove the
-> material from the line above to the one further down about
-> Docker options and image building. I think those things go
-> beyond "basic walkthrough". I've left it untouched for now
-> and am jumping ahead to describe first time operation of
-> the Orchestrator.
-
-### Docker Options
-- Options
-	- `-f FILE` or `--file FILE` -- Specify an alternate compose file (default: docker-compose.yml)
-	- `-p NAME` or `--project-name NAME` -- Specify an alternate project name (default: directory name)
-	- `d` or `--detach` -- Detached mode: Run containers in the background, print new container names. Incompatible with --abort-on-container-exit.
-- Starting
-	- Run the `docker-compose` command for the Orchestrator as shown below
-
--  Stopping
-	-  If running attached (showing log output, no -d option)
-		-  Use 'Ctrl + C' 
-	-  If running detached (not showing log output, -d option)
-		-  Run the `docker-compose` that was used to start the Orchestrator **except** replace `up ...` with `down`
-			
-			```bash
-			docker-compose ...... down
-			```
-- Building Images
-	- Run the `docker-compose` that was used to start the Orchestrator **except** replace `up ...` with `build`
-	- Options
-		- SERVICE_NAME - The name of the service to rebuild the image, if not specified all will build
-	- Notes
-		- Does not need to be run prior to starting, the containers will autobuild if not available
-		- Should be run after adding a new Protocol or Serialization
-	
-	```bash
-	docker-compose ...... build [SERVICE_NAME]
-	```
-
-### Docker Compose Files
-### Central Logging
-- __Still in Beta__
-- Run the `docker-compose` as normal with the additional option of a second '-f/--file'
-- Allows for a central location for logging rather than the docker default of per container
-- Runs on default port of 8081 for logger web GUI
-
-	```bash
-	docker-compose -f orchestrator-compose.yaml -f orchestrator-compose.log.yaml ...
-	```
-
-#### Orchestrator
-- Use [`docker-compose`](https://docs.docker.com/compose/reference/overview/) to start the orchestrator on the system
-
-	```bash
-	docker-compose -f orchestrator-compose.yaml [-p NAME] up [-d]
-    ```
-
-> **--------------------------------------------------------------------**
+This command should also be run after terminating an
+attached OIF instance with `ctrl-c`, as it also performs a number
+of desirable clean-up actions.
 
 ## Accessing the Orchestrator GUI
 
-The OIF Orchestrator provides a graphical user interfaces
+The OIF Orchestrator provides a graphical user interface
 (GUI) for the user to manage devices and
 actuators, and create and send OpenC2 commands and
 review responses The GUI is accessed at
@@ -207,12 +144,17 @@ The default login credentials are
  - Password: `password`
 
 After login to the User GUI you will seen the home screen
-with the system menu
+with the system menu. A `theme` menu is available in the
+bottom right corner to alter the GUI color scheme.
+The `Hello, {USER}` menu at the right provides access to logoff,
+password change, and system administration features.
+Information about the system administration features is
+provided in the [Orchestrator README file](./README.md).
+
+> **NOTE:** The password change feature is currently
+> non-functional and will be fixed in a future update.
 
 ![OIF Orchestrator Home Screen](images/oif-orch-home-screen.png)
-
-> **NOTE:** add information about changing default login
-> credentials and GUI theme.
 
 
 ## Create Devices and  Actuators
@@ -223,12 +165,18 @@ the Orchestrator can issue commands and receive responses.
 Note that the Device isn't explicitly mentioned in the
 [OpenC2
 specifications](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=openc2#technical),
-it's an OIF construct. Devices and their associated
-actuators have to be registered in the OIF Orchestrator before
-interactions with them are possible. In addition, actuators
-must have an associated JSON schema to inform the
-Orchestrator of the action/target pairs the actuator can
-process.
+it's an OIF construct. The following diagram illustrates the
+organization of an OIF Device:
+
+![OIF Device Block Diagram](./images/dev-block-diagram.png)
+
+
+
+Devices and their associated actuators have to be registered
+in the OIF Orchestrator before interactions with them are
+possible. In addition, actuators must have an associated
+JSON schema to inform the Orchestrator of the action/target
+pairs the actuator can process.
 
 Devices and actuators have associated identifiers. Within
 OIF these are required to be v4 UUIDs; this is an OIF
@@ -294,7 +242,8 @@ associated with a single device. The process for registering
 an actuator is:
 
 
-1. Select `Actuators` from the Orchestrator menu; this brings
+1. Select `Actuators` from the Orchestrator menu; this
+   brings up
   the list of registered actuators.
 1. Click the `REGISTER` button at the right; this opens the
    dialog to register a new actuator.
@@ -384,15 +333,12 @@ complete command and response together).
 
 ![Command / Response Details Example](images/oif-orch-cmd-rsps.png)
 
-## Message Transfer via MQTT Publish / Subscribe
-
-**TBSL**
-
+## (TBSL) Message Transfer via MQTT Publish / Subscribe
 
 - If you are registering a new actuator for the first time
   while utilizing the MQTT transport you may need to update
   the `MQTT_TOPICS` environment variable. Read the MQTT
-  Topics section [here](transport/mqtt/ReadMe.md)
+  Topics section [here](/orchestrator/transport/mqtt/ReadMe.md)
 
 
 ## Container/Services ReadMe
@@ -405,3 +351,7 @@ components are linked here:
 | [Core](../orchestrator/core/ReadMe.md)  | [HTTPS](../orchestrator/transport/https/README.md)  | [GUI](../logger/gui/ReadMe.md)  |
 | [GUI](../orchestrator/gui/client/ReadMe.md)  | [MQTT](../orchestrator/transport/mqtt/ReadMe.md)  | [Server](../logger/server/ReadMe.md)  |
 
+Tutorials are available for extending the OIF:
+
+* Adding a [new serialization](./Serializations.md)
+* Adding a [new transport protocol](./Transport.md)

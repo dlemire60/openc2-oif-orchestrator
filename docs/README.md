@@ -12,25 +12,18 @@ which functions as an OpenC2 producer, and the "[OIF
 Device](https://github.com/oasis-open/openc2-oif-device)",
 which functions as an OpenC2 consumer. Due to port bindings
 it is recommended that the Orchestrator and the Device not
-be run on the same machine.
-
-> **DPL Question:**  can we say something about running them in
-> multiple VMs or Docker containers hosted on the same
-> machine? Or should we explicitly say that's not a good idea.
+be run on the same machine. Operation on networked virtual
+machines (VMs) in the same virtualization host is fully supported.
 
 This document contains the information necessary for experienced
 developers to begin working with the OIF Orchestrator. A
 more detailed start-up explanation can be found in
 [WALKTHROUGH.md](./WALKTHROUGH.md).
 
-When used together the OIF Orchestrator and Device implement
-both sides of the OpenC2 [Producer / Consumer
-model](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#16-overview).
-The Orchestrator performs the OpenC2 Producer role, while
-the Device performs the Consumer role. The following diagram
-provides a high-level overview:
+The following diagram provides a high-level
+overview of the OIF Orchestrator's construction:
 
-![Insert Overview Diagram](images/overview.png)
+![OIF Orchestrator Block Diagram](images/orch-block-diagram.png)
 
 ## Container/Services ReadMe
 
@@ -89,19 +82,21 @@ Minimum requirements to run the OIF Orchestrator
 - Starting
     - Run the `docker-compose` command for the Orchestrator
       as shown below
-> **DPL Question:** Is something missing here? Like the
-> actual `docker-compose` command? Otherwise, the target of
-> "as shown below" is a bit vague.
+
+```bash
+docker-compose -f orchestator-compose.yaml up
+```
 
 -  Stopping
 	-  If running attached (showing log output, no -d option)
 		-  Use 'Ctrl + C' 
-	-  If running detached (not showing log output, -d option)
-		-  Run the `docker-compose` that was used to start the Orchestrator **except** replace `up ...` with `down`
+    -  If running detached (not showing log output, -d
+       option), run the `docker-compose` that was used to start the Orchestrator **except** replace `up ...` with `down`
 			
-			```bash
-			docker-compose ...... down
-			```
+```bash
+docker-compose ...... down
+```
+
 - Building Images
 	- Run the `docker-compose` that was used to start the Orchestrator **except** replace `up ...` with `build`
 	- Options
